@@ -1,7 +1,7 @@
 import { Box, Button, Checkbox, Container, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
 import React from 'react'
 
-function Formulario() {
+function Formulario(props) {
   return (
     <>
     <Container component="main" maxWidth="xs">
@@ -13,11 +13,11 @@ function Formulario() {
     }}
     >
         <Typography component="h2" variant="h5">
-            formulario de login
+            {props.titulo}
         </Typography>
         <Box component="form" sx={{mt:1}}>
-        <TextField fullWidth label="email" name="email" variant="filled"/>
-        <TextField fullWidth label="senha" type="password" variant="filled"/>
+        <TextField fullWidth label="email" name="email" variant="filled" required/>
+        <TextField fullWidth label="senha" type="password" variant="filled" required/>
         <FormControlLabel 
         control={<Checkbox value="remember color" color="primary"/>}
         label="lembrar-me"
